@@ -54,7 +54,7 @@ img{
 #top p{
   font-family: "Raleway";
   font-size: 26px;
-  font-weight: 100;
+  font-weight: 300;
   width: 25%;
   text-align: right;
   border-bottom: 1px solid #777;
@@ -216,7 +216,7 @@ img{
 #about-content a {
   font-style: normal;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 100;
   font-family: 'Arvo';
   color: black;
   text-align: center;
