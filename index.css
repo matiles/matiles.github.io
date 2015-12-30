@@ -33,15 +33,22 @@ img{
   height: 150px;
 }
 
-hr{
-  margin-top: -10px;
-  margin-bottom: 30px;
+#nav-icon{
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background: black;
 }
+
 /**************** Top navigation ****************/
 #top{
   display: inline-flex;
   width: 100%;
-  /*margin-top: 5px;*/
+  height: 70px;
+  height: auto;
 }
 
 #top p{
@@ -50,9 +57,18 @@ hr{
   font-weight: 100;
   width: 25%;
   text-align: right;
-  /*border-bottom: 1px solid black;*/
-  margin-top: 14px;
+  border-bottom: 1px solid #777;
+  margin-top: 0px;
+  padding-top: 15px;
   margin-bottom: 20px;
+  /*padding-bottom: 20px;*/
+}
+#top p a{
+  font-family: "Raleway";
+  font-size: 26px;
+  font-weight: 100;
+  text-align: right;
+  padding: 0px;
 }
 
 #top nav {
@@ -60,13 +76,16 @@ hr{
   position: relative;
   width: 75%;
   padding-top: 20px;
-  /*padding-bottom: 20px;*/
+  padding-bottom: 20px;
 }
 #top nav ul {
   display: inline-flex;
   width: 70%;
   padding-left: 30%;
-  /*border-bottom: 1px solid black;*/
+  border-bottom: 1px solid #777;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.3s linear;
 }
 #top nav ul li{
   width: 105px;
@@ -84,7 +103,7 @@ hr{
 }
 /**************** End top navigation *************/
 
-
+/**************** projects content *************/
 #projects-content{
   display: block;
   width: 100%;
@@ -97,6 +116,7 @@ hr{
   font-size: 28px;
   margin-bottom: 0px;
   margin-top: 20px;
+  transition: margin-top 0.3s linear;
 }
 #projects-content nav {
   display: block;
@@ -117,10 +137,6 @@ hr{
   padding-bottom: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  /*border-left: 1px solid black;*/
-  /*border-right: 1px solid black;*/
-  /*border-bottom: 1px solid black;*/
-  /*border: 1px solid black;*/
 }
 #projects-content nav ul li p{
   font-family: "Lato";
@@ -140,12 +156,10 @@ hr{
   text-align: center;
 }
 
+/**************** End projects content *************/
 
 
-
-
-
-
+/**************** about content *************/
 #about-content{
   display: block;
   width: 100%;
@@ -182,6 +196,14 @@ hr{
   margin-top: 20px;
   margin-bottom: 20px;
 }
+#about-content div div div{
+  display: inline-flex;
+  width: 150px;
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
 #about-content div p{
   font-family: "Lato";
   font-size: 17px;
@@ -198,4 +220,190 @@ hr{
   font-family: 'Arvo';
   color: black;
   text-align: center;
+}
+/**************** End about content *************/
+
+/* Projects Content */
+@media screen and (max-width: 860px) {
+
+    #projects-content nav{
+        width: 100%;
+    }
+    #projects-content nav ul li{
+        display: block;
+    }
+    #projects-content nav ul li div{
+        margin:auto;
+        padding-left: 0px;
+        width: 300px;
+        margin-bottom: 15px;
+    }
+    #projects-content nav ul li div a{
+        margin:auto;
+        text-align: center;
+    }
+    #projects-content nav ul li div img{
+        margin:auto;
+        text-align: center;
+    }
+    #projects-content nav ul li p{
+        margin:auto;
+        padding-left: 0px;
+        width: 60%;
+    }
+
+    #about-content{
+        width: 100%;
+    }
+    #about-content img{
+        margin:auto;
+        text-align: center;
+    }
+    #about-content p{
+      margin-bottom: 0px;
+      margin-top: 20px;
+    }
+    #about-content div {
+      width: 500px;
+      margin: auto;
+    }
+    #about-content div div{
+      display: block;
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    #about-content div div div{
+      width: 100%;
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+    #about-content div p{
+      text-align: left;
+      width: 100%;
+      padding-left: 5px;
+    }
+}
+
+/* Top navigation */
+@media screen and (max-width: 640px) {
+
+    #top{
+      display: block;
+    }
+    hr{
+      margin-top: -15px;
+    }
+    #nav-icon{
+      display: block;
+    }
+    #top p{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0px;
+        padding-bottom: 15px;
+    }
+    #top nav{
+        width: 100%;
+        padding-top: 0px;
+    }
+    #top nav ul{
+      width: 100%;
+      padding-left: 0px;
+      border: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+    #top nav ul li{
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #777;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    #projects-content p{
+      margin-top: -20px;
+    }
+
+    #about-content p{
+      margin-bottom: 0px;
+      margin-top: -20px;
+    }
+    #about-content div {
+      width: 400px;
+      margin: auto;
+    }
+
+    .content-up{
+      margin-top: -20px !important;
+      transition: margin-top 0.3s linear;
+    }
+    .content-down{
+      margin-top: 0px !important;
+      transition: margin-top 0.3s linear;
+    }
+}
+
+/* Top Navigation */
+@media screen and (min-width: 640px) {
+    #top nav ul{
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+}
+
+/* Top Navigation */
+@media screen and (max-width: 460px) {
+    #top nav{
+      width: 100%;
+      padding-top: 0px;
+    }
+    #top nav ul{
+      width: 100%;
+      padding-left: 0px;
+      display: block;
+      border: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+    #top nav ul li{
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #777;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    #projects-content p{
+      margin-top: -180px;
+    }
+    #about-content #title{
+      margin-top: -180px;
+    }
+    #about-content div {
+      width: 300px;
+      margin: auto;
+    }
+    .content-up{
+      margin-top: -180px !important;
+      transition: margin-top 0.3s linear;
+    }
+    .content-down{
+      margin-top: 0px !important;
+      transition: margin-top 0.3s linear;
+    }
+}
+
+.collapse{
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.expand{
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: visibility 0.3s, opacity 0.3s linear;
 }

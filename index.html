@@ -7,41 +7,47 @@
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
         <link rel="stylesheet" type="text/css" href="index.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="//http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
     </head>
 
     <body>
         <div id="top">
-          <p>Mateo Aviles</p>
-          <nav>
+          <p><a href="about.html">Mateo Aviles</a></p>
+          <nav id="top-nav">
             <ul>
-              <li id="projects-tab"><a href="index.html">Projects</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="#">Photography</a></li>
-              <li><a href="classes.html">Classes</a></li>
-              <li><a target="_blank" href="resume/AvilesMateoRes.pdf">Resume</a></li>
+              <li id="projects-tab" class="project"><a href="index.html" class="">Projects</a></li>
+              <li class=""><a href="about.html" class="">About</a></li>
+              <li class=""><a href="#" class="">Photography</a></li>
+              <li class=""><a href="classes.html" class="">Classes</a></li>
+              <li class=""><a target="_blank" href="resume/AvilesMateoRes.pdf" class="">Resume</a></li>
               <!-- <li><a target="_blank" href="/resume/">Resume</a></li> -->
             </ul>
           </nav>
         </div>
-        <hr/>
+        <a id="nav-icon" href="#"></a>
 
         <div id="projects-content">
-            <p>
+            <p id="title">
               Projects
             </p>
             <nav>
               <ul>
-                <li>
-                  <a href="http://people.tamu.edu/~mateo-7/semantics_visualization/sunburst.html"><img src="images/CSCE444-YelpVisualization.png" alt="" /></a>
+                <li class="">
+                  <div class="">
+                    <a href="http://people.tamu.edu/~mateo-7/semantics_visualization/sunburst.html"><img src="images/CSCE444-YelpVisualization.png" alt="" /></a>
+                  </div>
                   <p> The goal of this application is to help users find the right business by allowing them to filter and compare, and by providing them
                     with analytics for each business. In the end, I hope that the visualization helps users see how businesses are currently doing compared
                     to how they did in the past, and how businesses compare against each other.
                   </p>
                 </li>
                 <li>
-                  <a href="http://people.tamu.edu/~mateo-7/essay_sketch/index.html"><img src="images/CSCE444-EssaySketch.png" alt="" /></a>
+                  <div class="">
+                    <a href="http://people.tamu.edu/~mateo-7/essay_sketch/index.html"><img src="images/CSCE444-EssaySketch.png" alt="" /></a>
+                  </div>
                   <p>In this class project we were to identify, articulate, and connect key themes from the in class readings with a topic/idea we are intersted in investigating.
                     We used the medium of hypermedia on the Internet to convey and support our idea and themes from the readings. The first part of this assignment is
                     to come up with a concept, or story, to tell. We then curated a set of 8-15 found media assets, which consist of images, texts, sounds clips, and video
@@ -49,13 +55,17 @@
                   </p>
                 </li>
                 <li>
-                  <a href="https://github.com/matiles/Programming-Studio-Steganography"><img src="images/secretRoad.bmp" alt="" /></a>
+                  <div class="">
+                    <a href="https://github.com/matiles/Programming-Studio-Steganography"><img src="images/secretRoad.bmp" alt="" /></a>
+                  </div>
                   <p>There is a secret message hidden in the image! In this class project I implemented an image stegosystem that takes an 8 bit greyscale
                     bmp image, hides a message into the least significant bit (LSB) of each pixel, extracts the message from the stego image, and attack a suspicious image.
                   </p>
                 </li>
                 <li>
-                  <a href="https://github.com/matiles/Programming-Studio-Steganography"><img src="images/twinkle-twinkle-little-star.JPG" alt="" /></a>
+                  <div>
+                    <a href="https://github.com/matiles/Programming-Studio-Steganography"><img src="images/twinkle-twinkle-little-star.JPG" alt="" /></a>
+                  </div>
                   <p>This project is related to the project above. In it I implemented another stegosystem using midi files. The goal was to hide a user given message
                     into a meta event and extract the message by locating the meta event in the track I created. Given a .mid file I needed to determine whether or not it
                     has any secret messages embedded. If it did I displayed this message to the user.
