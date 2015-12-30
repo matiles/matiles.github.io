@@ -355,13 +355,16 @@ img{
     #projects-content p{
       margin-top: -20px;
     }
-
+		#projects-content nav ul li p{
+			width: 70%;
+		}
     #about-content p{
       margin-bottom: 0px;
       margin-top: -20px;
     }
     #about-content div {
       width: 400px;
+			width: 80%;
       margin: auto;
     }
 
@@ -405,6 +408,9 @@ img{
       padding-top: 10px;
       padding-bottom: 10px;
     }
+		#projects-content nav ul li p{
+			width: 85%;
+		}
     #projects-content p{
       margin-top: -180px;
     }
@@ -412,7 +418,8 @@ img{
       margin-top: -180px;
     }
     #about-content div {
-      width: 300px;
+			/*width: 300px;*/
+      width: 85%;
       margin: auto;
     }
     .content-up{
