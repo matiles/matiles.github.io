@@ -1,0 +1,197 @@
+html{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity ease .2s;
+}
+
+a:hover {
+  opacity: .82;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+img{
+  width: 300px;
+  height: 150px;
+}
+
+/**************** Top navigation ****************/
+#top{
+  display: inline-flex;
+  width: 100%;
+  /*margin-top: 5px;*/
+}
+
+#top p{
+  font-family: "Raleway";
+  font-size: 26px;
+  font-weight: 100;
+  width: 25%;
+  text-align: right;
+  border-bottom: 1px solid black;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+
+#top nav {
+  display: inline-flex;
+  position: relative;
+  width: 75%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#top nav ul {
+  display: inline-flex;
+  width: 70%;
+  padding-left: 30%;
+  border-bottom: 1px solid black;
+}
+#top nav ul li{
+  width: 105px;
+  padding-top: 3px;
+  padding-bottom: 17px;
+  text-align: center;
+}
+#top a {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 100;
+  font-family: 'Arvo';
+  color: black;
+  text-align: center;
+}
+/**************** End top navigation *************/
+
+
+#projects-content{
+  display: block;
+  width: 100%;
+  /*margin-top: 5px;*/
+}
+#projects-content p{
+  width: 100%;
+  text-align: center;
+  font-family: "Arvo";
+  font-size: 28px;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+#projects-content nav {
+  display: block;
+  position: relative;
+  width: 850px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  margin: auto;
+}
+#projects-content nav ul {
+  display: block;
+  width: 100%;
+}
+#projects-content nav ul li{
+  display: inline-flex;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /*border-left: 1px solid black;*/
+  /*border-right: 1px solid black;*/
+  /*border-bottom: 1px solid black;*/
+  /*border: 1px solid black;*/
+}
+#projects-content nav ul li p{
+  font-family: "Lato";
+  font-size: 17px;
+  text-align: left;
+  width: 100%;
+  padding-left: 25px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+#projects-content a {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 100;
+  font-family: 'Arvo';
+  color: black;
+  text-align: center;
+}
+
+
+
+
+
+
+
+#about-content{
+  display: block;
+  width: 100%;
+  /*margin-top: 5px;*/
+}
+#about-content img{
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  /*margin-top: 5px;*/
+}
+#about-content p{
+  width: 100%;
+  text-align: center;
+  font-family: "Arvo";
+  font-size: 28px;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+#about-content div {
+  display: block;
+  position: relative;
+  width: 850px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  margin: auto;
+}
+#about-content div div{
+  display: inline-flex;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#about-content div p{
+  font-family: "Lato";
+  font-size: 17px;
+  text-align: left;
+  width: 100%;
+  padding-left: 25px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+#about-content a {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 100;
+  font-family: 'Arvo';
+  color: black;
+  text-align: center;
+}
