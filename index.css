@@ -33,6 +33,10 @@ img{
   height: 150px;
 }
 
+hr{
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
 /**************** Top navigation ****************/
 #top{
   display: inline-flex;
@@ -46,7 +50,7 @@ img{
   font-weight: 100;
   width: 25%;
   text-align: right;
-  border-bottom: 1px solid black;
+  /*border-bottom: 1px solid black;*/
   margin-top: 14px;
   margin-bottom: 20px;
 }
@@ -56,13 +60,13 @@ img{
   position: relative;
   width: 75%;
   padding-top: 20px;
-  padding-bottom: 20px;
+  /*padding-bottom: 20px;*/
 }
 #top nav ul {
   display: inline-flex;
   width: 70%;
   padding-left: 30%;
-  border-bottom: 1px solid black;
+  /*border-bottom: 1px solid black;*/
 }
 #top nav ul li{
   width: 105px;
