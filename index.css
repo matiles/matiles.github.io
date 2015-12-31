@@ -147,7 +147,7 @@ img{
   margin-top: 20px;
   transition: margin-top 0.3s linear;
 }
-#projects-content nav {
+#projects-content nav, .center{
   display: block;
   position: relative;
   width: 850px;
@@ -264,7 +264,7 @@ img{
 /* Projects Content */
 @media screen and (max-width: 860px) {
 
-    #projects-content nav{
+    #projects-content nav, .center{
         width: 100%;
     }
     #projects-content nav ul li{
