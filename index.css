@@ -116,7 +116,7 @@ img{
   opacity: 1;
   transition: visibility 0s, opacity 0.3s linear;
 }
-#top nav ul li{
+#top nav ul a{
   width: 105px;
   padding-top: 3px;
   padding-bottom: 17px;
@@ -358,7 +358,7 @@ img{
       visibility: hidden;
       opacity: 0;
     }
-    #top nav ul li{
+		#top nav ul a{
       width: 100%;
       text-align: center;
       border-bottom: 1px solid #777;
@@ -415,6 +415,13 @@ img{
       opacity: 0;
     }
     #top nav ul li{
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #777;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+		#top nav ul a{
       width: 100%;
       text-align: center;
       border-bottom: 1px solid #777;
