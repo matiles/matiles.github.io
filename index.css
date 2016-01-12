@@ -432,10 +432,10 @@ img{
 			width: 85%;
 		}
     #projects-content p{
-      margin-top: -180px;
+      margin-top: -130px;
     }
     #about-content #title{
-      margin-top: -180px;
+      margin-top: -130px;
     }
     #about-content div {
 			/*width: 300px;*/
@@ -446,7 +446,7 @@ img{
 		  width: 95%;
 		}
     .content-up{
-      margin-top: -180px !important;
+      margin-top: -130px !important;
       transition: margin-top 0.3s linear;
     }
     .content-down{
