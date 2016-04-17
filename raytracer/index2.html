@@ -89,12 +89,10 @@
                       },
            mode: mode
         };
-        //render
+        
         var y = gpu.createKernel(function(Camera,Lights,Objects) {
           // Start by creating a simple vector pointing in the direction the camera is
           // pointing - a unit vector
-          // calculated by taking a vector and simply dividing it by its magnitude
-          // first subtract
             var subX = Camera[3] - Camera[0];
             var subY = Camera[4] - Camera[1];
             var subZ = Camera[5] - Camera[2];
@@ -104,11 +102,6 @@
             var eyeY = subY/magnitude;
             var eyeZ = subZ/magnitude;
 
-          // and then we'll rotate this by combining it with a version that's turned
-          // 90° right and one that's turned 90° up. Since the [cross product](http://en.wikipedia.org/wiki/Cross_product)
-          // takes two vectors and creates a third that's perpendicular to both,
-          // we use a pure 'UP' vector to turn the camera right, and that 'right'
-          // vector to turn the camera up.
           // cross product eye with up vector (0,1,0)
           // x: (a.y * b.z) - (a.z * b.y), y: (a.z * b.x) - (a.x * b.z), z: (a.x * b.y) - (a.y * b.x)
             var eyeCROSSupX = -(eyeZ);
@@ -139,20 +132,11 @@
                 pixelWidth = camerawidth / (width - 1),
                 pixelHeight = cameraheight / (height - 1);
 
-          // adaptive sampling
-          // check where the object is in the camera
-          // We already have the info
-
           // set the initial background color
             // defualt color... background
             var color_r = 0.95;
             var color_g = 0.95;
             var color_b = 0.95;
-
-            // var cZeroX = 0;
-            // var cZeroY = 0;
-            // var cZeroZ = 0;
-            // var lambertAmount = 0;
 
           // calculate the ray starting point from camera          
             var rayPointX = Camera[this.constants.Cx];
@@ -183,7 +167,6 @@
           // first check if a ray intersects an object
             // so do intersection. take the color of the closest object
             // The base case is that it hits nothing, and travels for `Infinity`
-            // var closest = [Infinity, null];
             var closest_distance = 10000;
             var object_type = 0;
             var idx = 1;                                     // index for looking through all the objects
@@ -209,7 +192,7 @@
                   dist = vProd - Math.sqrt(discriminant);
                 }
               }
-              if (dist != -1 && dist < closest_distance) { //dist!=undifined
+              if (dist != -1 && dist < closest_distance) {
                 closest_distance = dist;
                 object_type = idx;
               }
@@ -237,7 +220,6 @@
               // a vector that's perpendicular to the surface and radiates outward. We need
               // to know this so that we can calculate the way that a ray reflects off of
               // a sphere.
-              // var unitSphereNormal = Vector.unitVector(Vector.subtract(pos, sphere.point));
                 var PointAtTimeSubObject_x = pointAtTime_x - Objects[object_type+this.constants.X];
                 var PointAtTimeSubObject_y = pointAtTime_y - Objects[object_type+this.constants.Y];
                 var PointAtTimeSubObject_z = pointAtTime_z - Objects[object_type+this.constants.Z];
@@ -251,10 +233,6 @@
                 var sphericalNormal_y = unitPointAtTimeSubObj_y;
                 var sphericalNormal_z = unitPointAtTimeSubObj_z;
 
-            //return surface(ray, scene, object, pointAtTime, sphereNormal(object, pointAtTime), depth);
-              // If `trace()` determines that a ray intersected with an object, `surface`
-              // decides what color it acquires from the interaction.
-              // function surface(ray, scene, object, pointAtTime, normal, depth) {
               // First get closest object  
                 var bR = Objects[object_type+this.constants.R];
                 var bG = Objects[object_type+this.constants.G];
@@ -289,16 +267,7 @@
                   // Note that there might be an intersection here, which is tricky - but if it's
                   // tiny, it's actually an intersection with the object we're trying to decide
                   // the surface of. That's why we check for `> -0.005` at the end.
-                  //
-                  // This is the part that makes objects cast shadows on each other: from here
-                  // we'd check to see if the area in a shadowy spot can 'see' a light, and when
-                  // this returns `false`, we make the area shadowy.
-                  // function isLightVisible(pt, scene, light) {
-                  // # Detecting collisions against all objects
 
-                    // var PointAtTimeSubLight_x = pointAtTime_x - lightPointX;
-                    // var PointAtTimeSubLight_y = pointAtTime_y - lightPointY;
-                    // var PointAtTimeSubLight_z = pointAtTime_z - lightPointZ;
                     PointAtTimeSubLight_x = pointAtTime_x - lightPointX;
                     PointAtTimeSubLight_y = pointAtTime_y - lightPointY;
                     PointAtTimeSubLight_z = pointAtTime_z - lightPointZ;
@@ -307,10 +276,6 @@
                     unitPointAtTimeSubLight_x = PointAtTimeSubLight_x/magn;
                     unitPointAtTimeSubLight_y = PointAtTimeSubLight_y/magn;
                     unitPointAtTimeSubLight_z = PointAtTimeSubLight_z/magn;
-
-                    // var unitPointAtTimeSubLight_x = PointAtTimeSubLight_x/magn;
-                    // var unitPointAtTimeSubLight_y = PointAtTimeSubLight_y/magn;
-                    // var unitPointAtTimeSubLight_z = PointAtTimeSubLight_z/magn;
 
                     // Given a ray, let's figure out whether it hits anything, and if so,
                     // what's the closest thing it hits.
@@ -343,7 +308,7 @@
                           dist2 = vProd - Math.sqrt(discriminant);
                         }
                       }
-                      if (dist2 != -1 && dist2 < closest) { //dist!=undifined
+                      if (dist2 != -1 && dist2 < closest) {
                         closest = dist2;
                         closest_obj = idx2;                    
                       }
@@ -356,8 +321,6 @@
                       // Otherwise, calculate the lambertian reflectance, which
                       // essentially is a 'diffuse' lighting system - direct light
                       // is bright, and from there, less direct light is gradually,
-                      // beautifully, less light.
-
                       var lightPointSubPointAtTime_x = lightPointX - pointAtTime_x;
                       var lightPointSubPointAtTime_y = lightPointY - pointAtTime_y;
                       var lightPointSubPointAtTime_z = lightPointZ - pointAtTime_z;
@@ -369,8 +332,6 @@
 
                       var contribution = dotProduct(unitLightPointSubPointAtTime_x, sphericalNormal_x, unitLightPointSubPointAtTime_y, sphericalNormal_y,unitLightPointSubPointAtTime_z, sphericalNormal_z);
 
-                      // sometimes this formula can return negatives, so we check:
-                      // we only want positive values for lighting.
                       if (contribution > 0){
                         lambertAmount = lambertAmount + contribution;
                       }
@@ -395,7 +356,6 @@
                   // off of that surface
 
                     var dot_product = 2*-1*(unitPointAtTimeSubLight_x*sphericalNormal_x + unitPointAtTimeSubLight_y*sphericalNormal_y + unitPointAtTimeSubLight_z*sphericalNormal_z);
-                    // var dot_product = -1*(rayVectorX*sphericalNormal_x + rayVectorY*sphericalNormal_y + rayVectorZ*sphericalNormal_z);
                     var reflectedRay_ScaleX = sphericalNormal_x*dot_product;
                     var reflectedRay_ScaleY = sphericalNormal_y*dot_product;
                     var reflectedRay_ScaleZ = sphericalNormal_z*dot_product;
@@ -403,10 +363,6 @@
                     var reflectedRay_Sub_rayVectorX = reflectedRay_ScaleX - sphericalNormal_x;
                     var reflectedRay_Sub_rayVectorY = reflectedRay_ScaleY - sphericalNormal_y;
                     var reflectedRay_Sub_rayVectorZ = reflectedRay_ScaleZ - sphericalNormal_z;
-
-                    // var reflectedRay_Sub_rayVectorX = reflectedRay_ScaleX - rayVectorX;
-                    // var reflectedRay_Sub_rayVectorY = reflectedRay_ScaleY - rayVectorY;
-                    // var reflectedRay_Sub_rayVectorZ = reflectedRay_ScaleZ - rayVectorZ;
 
                     var reflectedRay_VectorReflectThroughX = reflectedRay_Sub_rayVectorX;
                     var reflectedRay_VectorReflectThroughY = reflectedRay_Sub_rayVectorY;
@@ -421,16 +377,9 @@
                     var yN = y/m;
                     var zN = z/m;
                     var mySpec = Math.max(-1*dotProduct(xN,unitPointAtTimeSubLight_x,yN,unitPointAtTimeSubLight_y,zN,unitPointAtTimeSubLight_z),0);
-                    // var mySpec = Math.max(-1*dotProduct(xN,rayVectorX,yN,rayVectorY,zN,rayVectorZ),0);
                     mySpec = Math.pow(mySpec, 10);
                     specCol = Objects[object_type + this.constants.SPEC] * mySpec;
                     lambertAmount = lambertAmount - mySpec;
-
-                    // if(color_r > 0 && color_g > 0 && color_b > 0){
-                    //   cZeroX = cZeroX + (color_r*Objects[object_type + this.constants.SPEC]);
-                    //   cZeroY = cZeroY + (color_g*Objects[object_type + this.constants.SPEC]);
-                    //   cZeroZ = cZeroZ + (color_b*Objects[object_type + this.constants.SPEC]);
-                    // }
 
                     rayPointX = reflectedRay_PointAtTimeX;
                     rayPointY = reflectedRay_PointAtTimeY;
@@ -439,28 +388,14 @@
                     rayVectorX = reflectedRay_VectorReflectThroughX;
                     rayVectorY = reflectedRay_VectorReflectThroughY;
                     rayVectorZ = reflectedRay_VectorReflectThroughZ;
-
-                    //var reflectedColor = trace(reflectedRay, scene, ++depth);
-                    // if (reflectedColor) {
-                    //     c = Vector.add(c, Vector.scale(reflectedColor, object.specular));
-                    // }
               }
 
-                // lambert should never 'blow out' the lighting of an object,
-                // even if the ray bounces between a lot of things and hits lights
-                lambertAmount = Math.min(1, lambertAmount);
+              lambertAmount = Math.min(1, lambertAmount);
 
-                // **Ambient** colors shine bright regardless of whether there's a light visible -
-                // a circle with a totally ambient blue color will always just be a flat blue
-                // circle.
-                // color_r = cZeroX + bR*(lambertAmount * Objects[object_type+this.constants.LAMB]) + bR*Objects[object_type+this.constants.AMB];
-                // color_g = cZeroY + bG*(lambertAmount * Objects[object_type+this.constants.LAMB]) + bG*Objects[object_type+this.constants.AMB];
-                // color_b = cZeroZ + bB*(lambertAmount * Objects[object_type+this.constants.LAMB]) + bB*Objects[object_type+this.constants.AMB];
-
-                color_r = specCol + bR*(lambertAmount * Objects[object_type+this.constants.LAMB]) + bR*Objects[object_type+this.constants.AMB];
-                color_g = specCol + bG*(lambertAmount * Objects[object_type+this.constants.LAMB]) + bG*Objects[object_type+this.constants.AMB];
-                color_b = specCol + bB*(lambertAmount * Objects[object_type+this.constants.LAMB]) + bB*Objects[object_type+this.constants.AMB];
-                this.color(color_r,color_g,color_b);
+              color_r = specCol + bR*(lambertAmount * Objects[object_type+this.constants.LAMB]) + bR*Objects[object_type+this.constants.AMB];
+              color_g = specCol + bG*(lambertAmount * Objects[object_type+this.constants.LAMB]) + bG*Objects[object_type+this.constants.AMB];
+              color_b = specCol + bB*(lambertAmount * Objects[object_type+this.constants.LAMB]) + bB*Objects[object_type+this.constants.AMB];
+              this.color(color_r,color_g,color_b);
             }
           }
         }, opt);
