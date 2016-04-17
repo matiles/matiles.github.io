@@ -6,7 +6,7 @@
 
 var camera = [
    0,0,0,                     // x,y,z coordinates
-   4,0,0,                     // Direction normal vector                                                                             
+   1,0,0,                     // Direction normal vector                                                                             
    45                         // field of view : example 45                                                                          
 ];
 
@@ -28,9 +28,10 @@ var lights = [
 ];
 
 var objects = [
-   2,                                                                            // number of objects                               
-   ObjTyp.SPHERE,      13, 0.0,0.0,0.9,0.6,0.7,0.1,1.0, 400,0,0,30,           // typ,recsz,r,g,b,spec,lamb,amb,opac, x,y,z,rad,           
-   ObjTyp.SPHERE,      13, 0.9,0.0,0.0,0.9,0.7,0.1,1.0, 400,0,150,40           // typ,recsz,r,g,b,spec,lamb,amb,opac, x,y,z,rad,           
+   3,                                                                            // number of objects                               
+   ObjTyp.SPHERE,      13, 0.0,0.0,0.9,0.6,0.7,0.1,1.0, 400,30,10,30,           // typ,recsz,r,g,b,spec,lamb,amb,opac, x,y,z,rad,           
+   ObjTyp.SPHERE,      13, 0.9,0.0,0.0,0.9,0.7,0.1,1.0, 400,0,50,40,           // typ,recsz,r,g,b,spec,lamb,amb,opac, x,y,z,rad,           
+   ObjTyp.SPHERE,      13, 0.0,0.0,0.8,0.6,0.7,0.1,1.0, 400,30,90,30           // typ,recsz,r,g,b,spec,lamb,amb,opac, x,y,z,rad,           
    // ObjTyp.SPHERE,      13, 1.0,0.0,0.0,0.2,0.7,0.1,1.0, 200,150,200,40,           // typ,recsz,r,g,b,spec,lamb,amb,opac, x,y,z,rad,           
    // ObjTyp.SPHERE,      13, 0.0,0.0,1.0,0.2,0.7,0.1,1.0, 200,150,150,20            // typ,recsz,r,g,b,spec,lamb,amb,opac, x,y,z,rad,            
 ];
