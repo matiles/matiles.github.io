@@ -16,7 +16,7 @@
   <body>
     <input type="button" value="Using CPU" onclick="return change(this);">
     <input type="button" value="Still Light" onclick="return change_light(this);">
-    <input type="button" value="Still Camera" onclick="return change_camera(this);">
+    <input type="button" value="Still Objects" onclick="return change_objects(this);">
 
     <div id="fps"></div> <!-- To show frames per second -->
 
@@ -44,14 +44,14 @@
         }
       }
 
-      var selection_camera = 0;
-      function change_camera( el_camera ) {
-        if ( el_camera.value === "Still Camera" ) {
-           selection_camera = 1;
-           el_camera.value = "Moving Camera";
+      var selection_objects = 0;
+      function change_objects( el_objects ) {
+        if ( el_objects.value === "Still Objects" ) {
+           selection_objects = 1;
+           el_objects.value = "Moving Objects";
         } else {
-           selection_camera = 0;
-           el_camera.value = "Still Camera";
+           selection_objects = 0;
+           el_objects.value = "Still Objects";
         }
       }
 
@@ -990,17 +990,18 @@
             bdy.replaceChild(newCanvas, cv);
         }
 
-        if (selection_camera === 1) {
-            if(camera[0] < 100 && inOut){
-              camera[0] = (camera[0]+1) % 200;
-            }
-            else
-              inOut = 0;
-            if(camera[0] > 0 && !inOut){
-              camera[0] = (camera[0]-1) % 200;
-            }
-            else
-              inOut = 1;
+
+        if (selection_objects === 1) {
+          if(objects[10] > 300 && inOut){
+            objects[10] = (objects[10]-2);
+          }
+          else
+            inOut = 0;
+          if(objects[10] < 500 && !inOut){
+            objects[10] = (objects[10]+2);
+          }
+          else
+            inOut = 1;
         }
 
         if (selection_light === 1) {
