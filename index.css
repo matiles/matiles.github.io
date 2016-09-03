@@ -147,6 +147,17 @@ img{
   margin-top: 20px;
   transition: margin-top 0.3s linear;
 }
+#projects-content p a{
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity ease .2s;
+}
+#projects-content p a:hover {
+  opacity: .82;
+}
 #projects-content nav{
   display: block;
   position: relative;
